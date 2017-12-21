@@ -1,0 +1,34 @@
+lexik_jwt_authentication:
+    # ssh private key path
+    private_key_path: '%kernel.project_dir%/%env(JWT_PRIVATE_KEY_PATH)%'
+    # ssh public key path
+    public_key_path:  '%kernel.project_dir%/%env(JWT_PUBLIC_KEY_PATH)%'
+    # ssh key pass phrase
+    pass_phrase:      '%env(JWT_PASSPHRASE)%'
+    # token ttl
+    # TODO change TTL to 3600 and enable token refresh at production
+    token_ttl:        86400000
+    # key under which the user identity will be stored in the token payload
+    user_identity_field: username
+
+    # token encoding/decoding settings
+    encoder:
+        # token encoder/decoder service - default implementation based on the namshi/jose library
+        service:            lexik_jwt_authentication.encoder.default
+        # crypto engine used by the encoder service
+        crypto_engine:  openssl
+        # encryption algorithm used by the encoder service
+        signature_algorithm: RS256
+
+    # token extraction settings
+    token_extractors:
+        authorization_header:      # look for a token as Authorization Header
+            enabled: true
+            prefix:  Bearer
+            name:    Authorization
+        cookie:                    # check token in a cookie
+            enabled: false
+            name:    BEARER
+        query_parameter:           # check token in query string parameter
+            enabled: false
+            name:    bearer
