@@ -257,9 +257,6 @@
             "ref": "a249484db698d1a847a30291c8f732414ac47e25"
         }
     },
-    "symfony/security": {
-        "version": "v4.0.2"
-    },
     "symfony/security-bundle": {
         "version": "3.3",
         "recipe": {
