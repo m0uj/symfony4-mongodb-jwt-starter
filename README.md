@@ -1,4 +1,4 @@
-# Symfony4-MongoDB-Starter
+# symfony4-mongodb-jwt-starter
 
 ## Installation Guidelines
 
@@ -14,18 +14,18 @@ you will need to:
 * Download and install [Composer](https://getcomposer.org/download/)
 
 ### Clone repository and install Composer dependencies
-You will need to clone the source code of symfony4-mongodb-starter GitHub repository:
+You will need to clone the source code of symfony4-mongodb-jwt-starter GitHub repository:
 
     git clone https://github.com/m0uj/symfony4-mongodb-starter.git
 
 Go inside the repository's directory and install the Composer dependencies:
 
-    cd symfony4-mongodb-starter
+    cd symfony4-mongodb-jwt-starter
     composer install
     
 ### Running the Web Application
-To run the Web Application, go inside the symfony4-mongodb-starter directory and execute:
+To run the Web Application, go inside the symfony4-mongodb-jwt-starter directory and execute:
 
-    cd symfony4-mongodb-starter
+    cd symfony4-mongodb-jwt-starter
     php bin/console server:run
 
