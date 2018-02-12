@@ -28,11 +28,11 @@ addons:
 before_install:
   - pecl install -f mongodb-${DRIVER_VERSION}
   - composer update ${COMPOSER_FLAGS}
+  
+before_script:
+  # install alcaeus/mongo-php-adapter library in the project
+  - composer require "alcaeus/mongo-php-adapter"
+  #- composer install
 
 script:
   - vendor/bin/phpunit
-  
-#before_script:
-  # install alcaeus/mongo-php-adapter library in the project
-  #- composer require "alcaeus/mongo-php-adapter"
-  #- composer install
