@@ -30,7 +30,7 @@ before_install:
   - composer require "alcaeus/mongo-php-adapter"
   - composer update ${COMPOSER_FLAGS}
   
-before_script:
+#before_script:
   # install alcaeus/mongo-php-adapter library in the project
   #- composer require "alcaeus/mongo-php-adapter"
   #- composer install
