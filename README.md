@@ -3,7 +3,7 @@
 ## Installation Guidelines
 
 ### Prerequisites
-The only prerequisites are PHP 7+, PHP MongoDB Driver and a text editor.
+The only prerequisites are PHP 7.2+, PHP MongoDB Driver and a text editor.
 
 ### Install tools
 If you don't have any of these tools installed already,
@@ -16,7 +16,7 @@ you will need to:
 ### Clone repository and install Composer dependencies
 You will need to clone the source code of symfony4-mongodb-jwt-starter GitHub repository:
 
-    git clone https://github.com/m0uj/symfony4-mongodb-starter.git
+    git clone https://github.com/m0uj/symfony4-mongodb-jwt-starter.git
 
 Go inside the repository's directory and install the Composer dependencies:
 
