@@ -1,5 +1,8 @@
 # symfony4-mongodb-jwt-starter
 
+[![Build Status](https://travis-ci.org/m0uj/symfony4-mongodb-jwt-starter.svg?branch=master)](https://travis-ci.org/m0uj/symfony4-mongodb-jwt-starter)
+[![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
+
 ## Installation Guidelines
 
 ### Prerequisites
