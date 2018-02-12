@@ -4,28 +4,35 @@ dist: trusty
 
 language: php
 
+# Note: latest PHP version is tested with coverage
 php:
+  - 7.0
+  - 7.1
   - 7.2
-  
+
+services:
+  - mongodb
+
+env:
+  global:
+    - DRIVER_VERSION="stable"
+
 addons:
   apt:
     sources:
-    - mongodb-3.2-precise
-    packages:
-    - mongodb-org-server
+      - sourceline: "deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse"
+        key_url: "https://www.mongodb.org/static/pgp/server-3.4.asc"
+      - "mongodb-upstart"
+    packages: ['mongodb-org-server']
 
 before_install:
-  - sudo apt-get update > /dev/null
+  - pecl install -f mongodb-${DRIVER_VERSION}
+  - composer update ${COMPOSER_FLAGS}
 
-  # MongoDB extension is preinstalled but not enabled by default.
-  - echo "extension = mongodb.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+script:
+  - vendor/bin/phpunit
   
-install:
-  # add composer's global bin directory to the path
-  # see: https://github.com/drush-ops/drush#install---composer
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  
-before_script:
+#before_script:
   # install alcaeus/mongo-php-adapter library in the project
   #- composer require "alcaeus/mongo-php-adapter"
-  - composer install
+  #- composer install
