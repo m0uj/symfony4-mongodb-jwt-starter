@@ -27,4 +27,4 @@ install:
   
 before_script:
   # install alcaeus/mongo-php-adapter library in the project
-  - composer require "alcaeus/mongo-php-adapter"
+  #- composer require "alcaeus/mongo-php-adapter"
