@@ -1,0 +1,30 @@
+sudo: true
+os: linux
+dist: trusty
+
+language: php
+
+php:
+  - 7.2
+  
+addons:
+  apt:
+    sources:
+    - mongodb-3.2-precise
+    packages:
+    - mongodb-org-server
+
+before_install:
+  - sudo apt-get update > /dev/null
+
+  # MongoDB extension is preinstalled but not enabled by default.
+  - echo "extension = mongodb.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  
+install:
+  # add composer's global bin directory to the path
+  # see: https://github.com/drush-ops/drush#install---composer
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  
+before_script:
+  # install alcaeus/mongo-php-adapter library in the project
+  - composer require "alcaeus/mongo-php-adapter"
