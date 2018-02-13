@@ -14,9 +14,14 @@ services:
   - mongodb
 
 env:
+  - SYMFONY_VERSION=4.1.* DEPENDENCIES=dev
   global:
     - DRIVER_VERSION="stable"
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+    
 addons:
   apt:
     sources:
@@ -37,4 +42,4 @@ before_install:
   #- composer install
 
 script:
-  - vendor/bin/phpunit
+  - composer test
