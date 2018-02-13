@@ -33,13 +33,12 @@ addons:
 before_install:
   - pecl install -f mongodb-${DRIVER_VERSION}
   - echo "extension = mongodb.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - composer require "alcaeus/mongo-php-adapter"
   - composer update ${COMPOSER_FLAGS}
   
-#before_script:
+before_script:
   # install alcaeus/mongo-php-adapter library in the project
-  #- composer require "alcaeus/mongo-php-adapter"
-  #- composer install
+  - composer require "alcaeus/mongo-php-adapter"
+  - composer install
 
 script:
   - composer test
