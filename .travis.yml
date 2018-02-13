@@ -6,8 +6,6 @@ language: php
 
 # Note: latest PHP version is tested with coverage
 php:
-  - 7.0
-  - 7.1
   - 7.2
 
 services:
