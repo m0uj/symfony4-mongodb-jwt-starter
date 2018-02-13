@@ -35,6 +35,3 @@ before_script:
   # install alcaeus/mongo-php-adapter library in the project
   - composer config "platform.ext-mongo" "1.6.16" && composer require alcaeus/mongo-php-adapter
   #- composer update ${COMPOSER_FLAGS}
-
-script:
-  - composer test
